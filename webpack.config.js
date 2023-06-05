@@ -6,6 +6,11 @@ module.exports = {
   target: 'node',
   externals: ['node_modules'],
   output: {
+    library: {
+      name: 'index',
+      type: 'umd',
+      export: 'default'
+    },
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
     chunkFilename: 'chunks/[name].chunk.js',
@@ -13,7 +18,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js'],
     alias: {
-        "@src": path.resolve(__dirname, 'src'),
+      "@src": path.resolve(__dirname, 'src'),
     }
   },
   module: {
@@ -25,4 +30,7 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimize: true
+  }
 };

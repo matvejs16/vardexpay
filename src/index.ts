@@ -99,7 +99,6 @@ class vardexPay {
 }
 
 export default vardexPay;
-module.exports = vardexPay;
 
 type RatesResponse = {
     currency: string;
