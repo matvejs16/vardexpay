@@ -6,7 +6,7 @@ module.exports = {
   target: 'node',
   externals: ['node_modules'],
   output: {
-    filename: 'bundle.js',
+    filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
     chunkFilename: 'chunks/[name].chunk.js',
   },
