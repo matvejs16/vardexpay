@@ -1,11 +1,10 @@
 import axios, { AxiosInstance } from "axios";
 import Decimal from "decimal.js";
 
-// const url = "https://vardexpay.com/api/exchange/ratio";https://vardexpay.com/api/exchange/rates
 const siteUrl = "https://vardexpay.com/api/";
 const apiUrl = "https://api.vardexpay.com/";
 
-export class vardexPay {
+class vardexPay {
     private mainApi: AxiosInstance;
     private siteApi: AxiosInstance;
     private loggedIn: boolean = false;
@@ -98,6 +97,9 @@ export class vardexPay {
         return data as ExchangeRatioResponse;
     }
 }
+
+export default vardexPay;
+module.exports = vardexPay;
 
 type RatesResponse = {
     currency: string;
