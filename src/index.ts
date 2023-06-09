@@ -94,6 +94,7 @@ class vardexPay {
             to,
             toNetwork
         })
+        if (data[1] !== 100000000) data[1] = 100000000
         return data as ExchangeRatioResponse;
     }
 }
