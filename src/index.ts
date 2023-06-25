@@ -94,12 +94,28 @@ class vardexPay {
             to,
             toNetwork
         })
+        if (inversedSymbols.includes(from)) data[0] = new Decimal(data[0]).times(100).toNumber();
         if (data[1] !== 100000000) data[1] = 100000000
         return data as ExchangeRatioResponse;
+    }
+
+    async exchange(from: string, to: string, amount: string, fromNetwork: string, toNetwork: string) {
+        // exchange https://vardexpay.com/api/exchange/do using POST {amount: 12.08}
+    }
+
+    async transferCrypto(one_symbol: string, amount: string, network: string, address: string) {
+        // transfer https://vardexpay.com/api/transfer/crypto using POST {"currency":"BTC","network":null,"amount":0.00483402,"receiver":{"address":"1MGRs1bAhzjcBMDNsZxCM6uHMqeAphZR2v","dest_tag":""}} return Safality if success
     }
 }
 
 export default vardexPay;
+
+const inversedSymbols = [
+    'TRX',
+    'XRP',
+    'USDT'
+]
+
 
 type RatesResponse = {
     currency: string;
