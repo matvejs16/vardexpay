@@ -95,7 +95,7 @@ class vardexPay {
             toNetwork
         })
         if (inversedSymbols.includes(from)) data[0] = new Decimal(data[0]).times(100).toNumber();
-        if (data[1] !== 100000000) data[1] = 100000000
+        if (data[1] !== 10000000000) data[1] = 10000000000
         return data as ExchangeRatioResponse;
     }
 
